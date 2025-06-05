@@ -1,9 +1,4 @@
-<!-- Hidden field to specify recipient email -->
-                <input type="hidden" name="_to" value="wiglobaltiktok@gmail.com">
-                <!-- Optional: Add a subject line -->
-                <input type="hidden" name="_subject" value="New TikTok Challenge 2025 Entry">
-                <!-- Optional: Redirect after submission -->
-                <input type="hidden" name="_next" value=""><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -156,6 +151,12 @@
             transform: translateY(-1px);
         }
 
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .success-message {
             display: none;
             background: linear-gradient(135deg, #a8e6cf, #7dd3c0);
@@ -225,6 +226,11 @@
         </div>
 
         <form id="challengeForm" action="https://formspree.io/f/xnnqkqao" method="POST">
+            <!-- Hidden fields for email configuration -->
+            <input type="hidden" name="_to" value="wiglobaltiktok@gmail.com">
+            <input type="hidden" name="_subject" value="New TikTok Challenge 2025 Entry">
+            <input type="hidden" name="_next" value="">
+            
             <div class="form-section">
                 <h3 class="section-title">Personal Information</h3>
                 
