@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WI Education Global TikTok Challenge 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a8e6cf 0%, #88d3f0 50%, #8fb3e8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c5aa0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #88d3f0;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group.gender {
+            flex: 0 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #88d3f0;
+            box-shadow: 0 0 15px rgba(136, 211, 240, 0.3);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #88d3f0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #88d3f0, #2c5aa0);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(44, 90, 160, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #a8e6cf, #7dd3c0);
+            color: #2c5aa0;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-group.gender {
+                flex: 1;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        .form-animation {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-error {
+            border-color: #e74c3c !important;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.3) !important;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container form-animation">
+        <div class="header">
+            <h1>WI EDUCATION GLOBAL<br>TIKTOK CHALLENGE 2025</h1>
+        </div>
+
+        <form id="challengeForm" action="https://formspree.io/f/wiglobaltiktok@gmail.com" method="POST">
+            <div class="form-section">
+                <h3 class="section-title">Personal Information</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group gender">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="female" required>
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="error-message" id="genderError">Please select your gender</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" required>
+                    <div class="error-message" id="addressError">Please enter your address</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tiktok">TikTok ID <span class="required">*</span></label>
+                        <input type="text" id="tiktok" name="tiktok_id" placeholder="@yourtiktokid" required>
+                        <div class="error-message" id="tiktokError">Please enter your TikTok ID</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <div class="error-message" id="phoneError">Please enter your phone number</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="question1">Question 1. How did you learn about this contest? <span class="required">*</span></label>
+                    <textarea id="question1" name="question1" placeholder="Tell us how you discovered this challenge..." required></textarea>
+                    <div class="error-message" id="question1Error">Please answer this question</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="question2">Question 2. What is your preferred theme? <span class="required">*</span></label>
+                    <textarea id="question2" name="question2" placeholder="Describe your preferred theme for the challenge..." required></textarea>
+                    <div class="error-message" id="question2Error">Please answer this question</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="question3">Question 3. Are you with a team or solo? <span class="required">*</span></label>
+                    <textarea id="question3" name="question3" placeholder="Let us know if you're participating solo or with a team..." required></textarea>
+                    <div class="error-message" id="question3Error">Please answer this question</div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Submit Entry
+            </button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            🎉 Thank you for your submission! Good luck with the TikTok Challenge 2025!
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('challengeForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            // Form validation function
+            function validateForm() {
+                let isValid = true;
+                
+                // Get all required fields
+                const requiredFields = [
+                    { id: 'name', error: 'nameError', message: 'Please enter your name' },
+                    { id: 'address', error: 'addressError', message: 'Please enter your address' },
+                    { id: 'tiktok', error: 'tiktokError', message: 'Please enter your TikTok ID' },
+                    { id: 'phone', error: 'phoneError', message: 'Please enter your phone number' },
+                    { id: 'email', error: 'emailError', message: 'Please enter a valid email address' },
+                    { id: 'question1', error: 'question1Error', message: 'Please answer this question' },
+                    { id: 'question2', error: 'question2Error', message: 'Please answer this question' },
+                    { id: 'question3', error: 'question3Error', message: 'Please answer this question' }
+                ];
+
+                // Check text fields
+                requiredFields.forEach(field => {
+                    const element = document.getElementById(field.id);
+                    const errorElement = document.getElementById(field.error);
+                    
+                    if (!element.value.trim()) {
+                        element.classList.add('input-error');
+                        errorElement.style.display = 'block';
+                        errorElement.textContent = field.message;
+                        isValid = false;
+                    } else {
+                        element.classList.remove('input-error');
+                        errorElement.style.display = 'none';
+                    }
+                });
+
+                // Check gender radio buttons
+                const genderInputs = document.querySelectorAll('input[name="gender"]');
+                const genderError = document.getElementById('genderError');
+                const genderSelected = Array.from(genderInputs).some(input => input.checked);
+                
+                if (!genderSelected) {
+                    genderError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    genderError.style.display = 'none';
+                }
+
+                // Email validation
+                const email = document.getElementById('email');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.value && !emailPattern.test(email.value)) {
+                    email.classList.add('input-error');
+                    document.getElementById('emailError').style.display = 'block';
+                    document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            // Add input event listeners for real-time validation
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('input-error')) {
+                        if (this.value.trim()) {
+                            this.classList.remove('input-error');
+                            const errorId = this.id + 'Error';
+                            const errorElement = document.getElementById(errorId);
+                            if (errorElement) {
+                                errorElement.style.display = 'none';
+                            }
+                        }
+                    }
+                });
+
+                // Add focus animation
+                input.addEventListener('focus', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+
+                input.addEventListener('blur', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    // Show loading state
+                    submitBtn.textContent = 'Submitting...';
+                    submitBtn.disabled = true;
+                    
+                    // Create FormData object
+                    const formData = new FormData(form);
+                    
+                    // Submit to Formspree
+                    fetch('https://formspree.io/f/wiglobaltiktok@gmail.com', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            form.style.display = 'none';
+                            successMessage.style.display = 'block';
+                            successMessage.style.animation = 'slideIn 0.6s ease-out';
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    }).catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your form. Please try again.');
+                        submitBtn.textContent = 'Submit Entry';
+                        submitBtn.disabled = false;
+                    });
+                } else {
+                    // Scroll to first error
+                    const firstError = document.querySelector('.input-error, .error-message[style*="block"]');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+
+            // Add TikTok ID formatting
+            const tiktokInput = document.getElementById('tiktok');
+            tiktokInput.addEventListener('input', function() {
+                let value = this.value;
+                if (value && !value.startsWith('@')) {
+                    this.value = '@' + value;
+                }
+            });
+
+            // Phone number formatting (basic)
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function() {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                } else if (value.length >= 3) {
+                    value = value.replace(/(\d{3})(\d+)/, '($1) $2');
+                }
+                this.value = value;
+            });
+        });
+    </script>
+</body>
+</html>
